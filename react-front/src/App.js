@@ -49,7 +49,7 @@ class App extends React.Component {
 	}
 	constructor(props) {
 		super(props);
-		this.host = "http://127.0.0.1:8000/";
+		this.host = "https://185.233.83.199/";
 		this.state = {is_anon:true, content:'lessons',username:'',lessons:[]};
 		this.contentChange = this.contentChange.bind(this);
 		this.setUsername = this.setUsername.bind(this);
