@@ -22,7 +22,10 @@ def create_anon_user(request):
 @api_view(["POST"])
 @permission_classes((IsAuthenticated,))
 def checktoken(request):
-    return JsonResponse({'detail':'ok'}, status=HTTP_200_OK)
+    is_anon = False
+    if request.user.username[:8]=="AnonUser":
+        is_anon = True
+    return JsonResponse({'is_anon':is_anon}, status=HTTP_200_OK)
 
 
 @csrf_exempt
